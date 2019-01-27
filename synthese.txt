@@ -1,0 +1,37 @@
+npm init
+npm i -s express ()
+npm i -s nodemon (indispensable pour éviter de redémarrer sans arrêt le serveur ...)
+modification package.json (script start : utilisation de nodemon)
+npm run start (démarrage en nodemon)
+npm i -s ejs (Moteur de template)
+On indique l'usage du moteur de template 
+  app.set('view engine', 'ejs')
+  positionement de la structure : views/page/index.ejs
+
+Telechargement d'un modele CSS : semantic ui
+Positionnement du modele par telechargement dans un fichier public/semantic (convention Express.js)
+En l'état, pas de gestion du routage des fichiers static
+app.use(express)
+
+Création d'une arborescence dans views (index / header / footer)
+> Création d'un formulaire pour poster un message (en utilisant les stylesheet ...)
+Création d'un routage du formulaire
+> app.post 
+Utilisation d'un middleware pour interpreter le body
+> npm i -s body-parser
+
+Gestion d'une session (pour le stockage de l'info sur l'erreur)
+> npm i -s express-session
+Mise en place d'un système de message flash : on positionne le message en session puis en locals
+> Puis création d'un middleware maison pour la gestion des messages flash
+
+Gestion de l'enregistrement en BDD
+> npm i -s mysql
+
+Utilisation de moment pour la mise en forme des dates
+> npm i -s moment
+
+
+Passage un mode PRODUCTION pour node
+> Dans package.json => modification de la commande start;
+>> start : "NODE_ENV=PRODUCTION nodemon server.js
